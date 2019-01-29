@@ -1,0 +1,122 @@
+@import '../scss/global';
+
+.transaction {
+  padding-top: 2rem;
+  .text-input {
+    position: relative;
+    margin-bottom: 1rem;
+    width: 100%;
+    .transactionInput {
+      height: 40px;
+      width: 100%;
+      border: 2px solid rgba(255, 255, 255, 0.7);
+      background: rgba(255, 255, 255, 0);
+      letter-spacing: 0.2rem;
+      font-size: 1rem;
+      text-transform: uppercase;
+      color: white;
+      font-family: Roboto;
+      &:focus {
+        border-color: $primary;
+        box-shadow: unset;
+      }
+      &:focus ~ .floating-label,
+      &:not(:focus):valid ~ .floating-label {
+        top: -1.5rem;
+        font-size: 0.8rem;
+      }
+    }
+    .floating-label {
+      letter-spacing: 0.2rem;
+      font-size: 1rem;
+      position: absolute;
+      top: 0.5rem;
+      transition: all 0.2s ease;
+      pointer-events: none;
+      left: 1.1rem;
+
+      text-transform: uppercase;
+      color: white;
+    }
+  }
+
+  .btn-send {
+    width: 100%;
+    font-weight: 500;
+    height: 40px;
+    padding: 0 1rem;
+    color: white;
+    line-height: 40px;
+    background: linear-gradient(
+      30deg,
+      adjust-hue(saturate($primary, 50%), -10%),
+      darken($primary, 10%)
+    );
+    transition: all 0.2s ease;
+    border: none;
+    position: relative;
+    &::before {
+      content: ' ';
+      background: rgba(rgb(86, 155, 247), 0.2);
+      width: 100%;
+      border-radius: 0.25rem;
+      opacity: 0;
+      left: 0;
+      top: 0;
+      position: absolute;
+      height: 100%;
+      transition: all 0.2s ease;
+    }
+    &:hover {
+      &::before {
+        opacity: 1;
+      }
+      color: white;
+      transition: all 0.2s ease;
+      text-indent: 1rem;
+    }
+  }
+
+  #mapContainer * {
+    user-select: none;
+    box-shadow: unset;
+    outline: unset;
+  }
+
+  .dashboard {
+    h2 {
+      color: $light;
+      text-transform: uppercase;
+      font-family: Roboto;
+      font-size: 1.5rem;
+    }
+
+    .info {
+      margin-bottom: 1rem;
+      &:first-child {
+        border-right: 1px solid $gray-700;
+      }
+      &-loc .value {
+        font-size: 1rem !important;
+      }
+      .name {
+        text-transform: uppercase;
+        color: $primary;
+        font-weight: normal;
+        margin: 0;
+      }
+      .value {
+        display: flex;
+        flex-direction: column;
+        font-size: 1.5rem;
+        line-height: 1;
+        color: white;
+        small {
+          text-transform: uppercase;
+          font-size: 1rem;
+          color: $gray-700;
+        }
+      }
+    }
+  }
+}

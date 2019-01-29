@@ -1,0 +1,83 @@
+@import '../scss/global';
+.home {
+  .heading {
+    margin-bottom: 5rem;
+  }
+
+  .btn-send {
+    width: 25%;
+    font-weight: 500;
+    padding: 0;
+    height: 60px;
+    color: white;
+    line-height: 60px;
+    font-size: 1.5rem;
+    background: linear-gradient(
+      30deg,
+      adjust-hue(saturate($primary, 50%), -10%),
+      darken($primary, 10%)
+    );
+    transition: all 0.2s ease;
+    border: none;
+    position: relative;
+    &::before {
+      content: ' ';
+      background: rgba(rgb(86, 155, 247), 0.2);
+      width: 100%;
+      border-radius: 0.25rem;
+      opacity: 0;
+      left: 0;
+      top: 0;
+      position: absolute;
+      height: 100%;
+      transition: all 0.2s ease;
+    }
+    &:hover {
+      &::before {
+        opacity: 1;
+      }
+      color: white;
+      transition: all 0.2s ease;
+      text-indent: 1rem;
+    }
+  }
+
+  .text-input {
+    position: relative;
+    padding-top: 2rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    .transactionInput {
+      height: 60px;
+      width: 100%;
+      border: 2px solid rgba(255, 255, 255, 0.7);
+      background: rgba(255, 255, 255, 0);
+      letter-spacing: 0.2rem;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      color: white;
+      font-family: Roboto;
+      &:focus {
+        border-color: $primary;
+        box-shadow: unset;
+      }
+      &:focus ~ .floating-label,
+      &:not(:focus):valid ~ .floating-label {
+        top: 0;
+        font-size: 1rem;
+      }
+    }
+    .floating-label {
+      letter-spacing: 0.2rem;
+      font-size: 1.2rem;
+      position: absolute;
+      top: 3rem;
+      transition: all 0.2s ease;
+      pointer-events: none;
+      left: 1.1rem;
+
+      text-transform: uppercase;
+      color: white;
+    }
+  }
+}
