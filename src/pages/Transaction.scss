@@ -1,6 +1,9 @@
 @import '../scss/global';
 
 .transaction {
+  .top-search {
+    margin-bottom: 2rem;
+  }
   padding-top: 2rem;
   .text-input {
     position: relative;
@@ -84,6 +87,62 @@
   }
 
   .dashboard {
+    margin-bottom: 1rem;
+
+    .pie-chart {
+      path {
+        stroke: transparent !important;
+      }
+    }
+
+    .status {
+      display: flex;
+      color: white;
+      .delay {
+        &-container {
+          text-align: center;
+        }
+        padding: 1rem;
+        margin-bottom: 0.5rem;
+        border-radius: 1rem;
+        text-align: center;
+        background: mix($gray-900, $success);
+        font-size: 3rem;
+        line-height: 0.5;
+      }
+      .duration {
+        padding: 1rem 1rem;
+        margin-bottom: 0.5rem;
+        border-radius: 1rem;
+        text-align: center;
+        font-size: 1.5rem;
+        line-height: 1;
+        color: white;
+        font-weight: 500;
+        background: mix($gray-900, $primary);
+      }
+      .entry {
+        margin-bottom: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .entry-info {
+          .name {
+            color: $primary;
+          }
+          .value {
+            font-size: 1.2rem;
+            line-height: 1;
+            color: white;
+            text-align: center;
+          }
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
     h2 {
       color: $light;
       text-transform: uppercase;
@@ -118,5 +177,19 @@
         }
       }
     }
+  }
+}
+
+.validate {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 1rem;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  .btn-validate {
+    width: 100%;
+  }
+  h2 {
+    color: white;
   }
 }
