@@ -8,8 +8,10 @@ export default class Home extends Component {
   constructor(props) {
     super(props);
     this.handleChange = this.handleChange.bind(this);
+    this.handleChangeEmail = this.handleChangeEmail.bind(this);
     this.state = {
       txID: '',
+      email: '',
     };
   }
 
@@ -17,8 +19,12 @@ export default class Home extends Component {
     this.setState({ txID: event.target.value });
   }
 
+  handleChangeEmail(event) {
+    this.setState({ email: event.target.value });
+  }
+
   render() {
-    const { txID } = this.state;
+    const { txID, email } = this.state;
     return (
       <>
         <Container
@@ -34,6 +40,16 @@ export default class Home extends Component {
           <Form className="d-flex flex-column">
             <div className="text-input">
               <Input
+                onChange={this.handleChangeEmail}
+                className="transactionInput"
+                bsSize="lg"
+                type="text"
+                required
+              />
+              <span className="floating-label">Enter your e-mail</span>
+            </div>
+            <div className="text-input">
+              <Input
                 onChange={this.handleChange}
                 className="transactionInput"
                 bsSize="lg"
@@ -43,7 +59,7 @@ export default class Home extends Component {
               <span className="floating-label">Enter transaction ID</span>
             </div>
             <Link
-              to={`/transaction/${txID}`}
+              to={`/${email}/shipment/${txID}`}
               className="btn align-self-center btn-send"
               color="primary"
               size="lg"

@@ -124,7 +124,7 @@
       .entry {
         margin-bottom: 1rem;
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
         .entry-info {
           .name {
@@ -188,6 +188,7 @@
   align-items: center;
   .btn-validate {
     width: 100%;
+    font-size: 1.2rem;
   }
   h2 {
     color: white;

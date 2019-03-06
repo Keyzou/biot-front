@@ -3,6 +3,7 @@ import Home from 'pages/Home';
 import Transaction from 'pages/Transaction';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { AnimatedSwitch } from 'react-router-transition';
+import 'react-toastify/dist/ReactToastify.css';
 import './App.scss';
 
 class App extends Component {
@@ -16,7 +17,7 @@ class App extends Component {
           className="switch-wrapper"
         >
           <Route exact path="/" component={Home} />
-          <Route exact path="/transaction/:txid" component={Transaction} />
+          <Route exact path="/:email/shipment/:txid" component={Transaction} />
         </AnimatedSwitch>
       </BrowserRouter>
     );

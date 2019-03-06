@@ -6,7 +6,9 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.13",
     "@fortawesome/free-solid-svg-icons": "^5.7.0",
     "@fortawesome/react-fontawesome": "^0.1.4",
+    "axios": "^0.18.0",
     "bootstrap": "^4.2.1",
+    "moment": "^2.24.0",
     "node-sass": "^4.10.0",
     "prop-types": "^15.6.2",
     "react": "^16.7.0",
@@ -15,6 +17,7 @@
     "react-router-transition": "^1.2.1",
     "react-scripts": "2.1.3",
     "react-simple-maps": "^0.12.1",
+    "react-toastify": "^4.5.2",
     "react-transition-group": "^2.5.3",
     "reactstrap": "^7.1.0",
     "recharts": "^1.4.2"
